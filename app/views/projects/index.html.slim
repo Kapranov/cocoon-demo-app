@@ -1,0 +1,33 @@
+/h1 =t :hello_world
+/= flash[:notice]
+/p = l Time.now, format: :short
+/=t 'greet_username', user: "Bill", message: "Goodbye"
+
+.row
+  .small-7.large-centered.columns.image-top
+    = image_tag 'img-contract.svg', "data-svg-fallback" => image_path('logo.png')
+    h2 = t("Listing projects")
+
+    table class=["large-12"]
+      thead
+        tr
+          th = t("Name")
+          th = t("Create at")
+          th = t("Update at")
+          th = t("Action")
+
+      tbody
+        - @projects.each do |project|
+          tr
+            td = project.name
+            /td = project.created_at.strftime("%d-%m-%Y")
+            td = local_time(project.created_at, '%d-%m-%Y')
+            td = local_time(project.updated_at, '%d-%m-%Y')
+            td style="width:145px;max-width: 100%;"
+              = link_to '<i class="fi-page-filled style4"></i>'.html_safe, project
+              = ' '
+              = link_to '<i class="fi-page-edit style4"></i>'.html_safe, edit_project_path(project)
+              = ' '
+              = link_to '<i class="fi-trash style4"></i>'.html_safe, project, data: {:confirm => 'Are you sure?'}, :method => :delete
+    /= link_to 'Create project', new_project_path, class: 'btnBordered blueBtnBordered btnbutton'
+    = link_to t("Create project"), new_project_path, class: "button expand btnBordered blueBtnBordered btnbutton"

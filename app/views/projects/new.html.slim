@@ -1,0 +1,11 @@
+.row
+  .large-5.large-centered.columns style="top:50pt"
+    = image_tag 'zurb-wired.svg', "data-svg-fallback" => image_path('logo.png')
+    h5 = t("New project")
+    == render 'form'
+    = link_to t("Back"), projects_path, class: "button expand btnBordered blueBtnBordered btnbutton"
+br
+br
+br
+br
+br

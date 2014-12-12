@@ -1,0 +1,23 @@
+.row
+  .small-10.large-centered.columns style="top:50pt"
+    = image_tag 'img-narrative.svg', "data-svg-fallback" => image_path('logo.png')
+
+    br
+    br
+    table class=["large-12"]
+      thead
+        tr
+          th = t("Name")
+          th = t("Description")
+
+      tbody
+        td
+          = @project.name
+        td
+          = @project.description
+
+    .row
+      .large-6.columns
+        = link_to t("Edit"), edit_project_path(@project), class: "button expand btnBordered blueBtnBordered btnbutton"
+      .large-6.columns
+        = link_to t("Back"), projects_path, class: "button expand btnBordered blueBtnBordered btnbutton"

@@ -1,0 +1,15 @@
+.row
+  .large-5.large-centered.columns style="top:50pt"
+    = image_tag 'why-tools.svg', "data-svg-fallback" => image_path('logo.png')
+    h5 = t("Editing project")
+
+    == render 'form'
+
+    .row
+      .large-6.columns
+        = link_to t("Show"), @project, class: "button expand btnBordered blueBtnBordered btnbutton"
+      .large-6.columns
+        = link_to t("Back"), projects_path, class: "button expand btnBordered blueBtnBordered btnbutton"
+    br
+    br
+    br

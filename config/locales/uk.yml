@@ -1,0 +1,153 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+uk:
+  hello: "Привіт світ - локаль Англійська"
+  greet_username: "%{message}, %{user}!"
+  Action: "Дія"
+  Update at: "Оновлення"
+  Create at: "Створити"
+  Name: "Назва"
+  Create project: "Створити проект"
+  Listing projects: "Проекти"
+  Kapranov Oleg: "Капранов Олег"
+  Email Us: "Пишіть нам"
+  Edit: "Редагувати"
+  Back: "Назад"
+  New project: "Новий проект"
+  Description: "Опис"
+  Tasks: "Задачі"
+  Add Task: "Додати задачу"
+  Editing project: "Редагування проекту"
+  Show: "Показати"
+  Update project: "Оновлення проекту"
+  Remove: "Видаляти"
+  Type the Name: "Введіть ім'я"
+  Describe the Task: "Опишіть завдання"
+  name_text: "Введіть назавніе"
+  description_text: "Введіть повний опис по назве"
+  Language: "Мова"
+  Log in: "Увійти"
+  Logout: "Вихід"
+  Edit profile: "Редагувати профіль"
+  Logged in as: "Ви увійшли як"
+  Sign up: "Підписатися"
+  Forgot password: "Забули свій пароль?"
+  Didnt receive confirmation instructions: "Не отримали листа з підтвердженням?"
+  Didnt receive unlock instructions: "Не отримали інструкції розблокування?"
+  Sign in with: "Увійдіть з"
+  Sign in: "Увійдіть"
+  Home: "На головну"
+  Admin: "Адмін"
+  Users: "Користувачі"
+  Sign out: "Вийти із системи"
+  Edit account: "Змінити акаунт"
+  activerecord:
+    models:
+      project: "проект"
+    attributes:
+      task:
+        done: "Зроблено"
+        Remove: "Видаляти"
+      user:
+        email: "Пошта"
+        password: "Пароль"
+        remember_me: "Запам'ятай мене"
+        Log in: "Увійти"
+        name: "Ваше прізвище"
+        password_confirmation: "Підтвердження пароля"
+  helpers:
+    submit:
+      create: "Створити %{model}"
+      update: "Оновлення %{model}"
+      submit: "Зберегти %{model}"
+  simple_form:
+    labels:
+      project:
+        name: "Назва"
+        description: "Опис"
+  time:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+    am: "до полудня"
+    pm: "по полудні"
+  devise:
+    confirmations:
+      confirmed: "Ваш обліковий запис підтверджено. Ви увійшли в систему."
+      send_instructions: "Ви отримаєте лист з інструкціями по підтвердженню вашого облікового запису протягом декількох хвилин."
+      send_paranoid_instructions: "Якщо Ваша email адреса існує в нашій базі даних, то протягом декількох хвилин Ви отримаєте лист з інструкціями по підтвердженню Вашого облікового запису."
+    failure:
+      already_authenticated: "Ви вже увійшли в систему."
+      inactive: "Ваш обліковий запис ще не активований."
+      invalid: "Невірний email чи пароль."
+      invalid_token: "Невірний ключ аутентифікації."
+      locked: "Ваш обліковий запис заблоковано."
+      not_found_in_database: "Невірний email чи пароль."
+      timeout: "Час вашої сесії вичерпано. Будь-ласка, увійдіть в систему знову."
+      unauthenticated: "Вам необхідно увійти в систему чи зареєструватися."
+      unconfirmed: "Ви маєте підтвердити Ваш обліковий запис."
+    mailer:
+      confirmation_instructions:
+        subject: "Інструкції з підтвердження облікового запису"
+      reset_password_instructions:
+        subject: "Інструкції з відновлення паролю"
+      unlock_instructions:
+        subject: "Інструкції з розблокування облікового запису"
+    omniauth_callbacks:
+      failure: "Ви не можете увійти в систему з облікового запису %{kind}, так як \"%{reason}\"."
+      success: "Вхід в систему з облікового запису %{kind} успішний."
+    passwords:
+      format: "Невірний формат - має складати мінімум 8 символів, у тому числі одну прописну букву, рядкову букву і цифру."
+      no_token: "Ця сторінка доступна тільки при переході з email для скидання паролю. Якщо Ви перейшли по посиланню з листа, будь-ласка, переконайтесь, що Ви використовували повний URL."
+      send_instructions: "Протягом декількох хвилин Ви отримаєте лист з інструкціями по скиданню Вашого паролю."
+      send_paranoid_instructions: "Якщо Ваша email адреса існує в нашій базі даних, то протягом декількох хвилин Ви отримаєте лист з інструкціями по відновленню Вашого паролю."
+      updated: "Ваш пароль було змінено. Ви увійшли в систему."
+      updated_not_active: "Ваш пароль було змінено успішно."
+    registrations:
+      destroyed: "До побачення! Ваш обліковий запис був успішно видалений. Сподіваємось незабаром побачитись з Вами знову."
+      signed_up: "Ласкаво просимо! Ви успішно зареєструвалися."
+      signed_up_but_inactive: "Ви успішно зареєструвалися, але Ви не можете увійти в систему тому, що Ваш обліковий запис ще не активований."
+      signed_up_but_locked: "Ви успішно зареєструвалися, але Ви не можете увійти в систему тому, що Ваш обліковий запис заблоковано."
+      signed_up_but_unconfirmed: "Ви отримаєте лист з інструкціями по підтвердженню вашого облікового запису протягом декількох хвилин."
+      updated: "Ваш обліковий запис змінено."
+      update_needs_confirmation: "Ваш обліковий запис оновлено успішно, але необхідно підтвердити Вашу нову email адресу. Будь-ласка, перевірте свою електронну скриньку і перейдіть за посиланням \"Підтвердити\", шоб завершити оновлення email адреси."
+    sessions:
+      signed_in: "Ви увійшли в систему."
+      signed_out: "Ви вийшли з системи."
+    unlocks:
+      send_instructions: "Протягом декількох хвилин Ви отримаєте лист з інструкціями по розблокуванню Вашого облікового запису."
+      send_paranoid_instructions: "Якщо Ваш обліковий запис існує, то протягом декількох хвилин Ви отримаєте лист з інструкціями по його розблокуванню."
+      unlocked: "Ваш обліковий запис розблоковано. Ви увійшли в систему."
+
+  errors:
+    messages:
+      already_confirmed: "вже підтверждено. Будь-ласка, спробуйте увійти в систему"
+      confirmation_period_expired: "має бути підтверджено протягом %{period}, будь-ласка, запросіть підтвердження запису завтра"
+      expired: "застаріла. Будь-ласка, запросіть нову"
+      not_found: "не знайдено"
+      not_locked: "не заблоковано"
+      not_saved:
+        one: "%{resource}: не вдалося зберегти через %{count} помилку"
+        few: "%{resource}: не вдалося зберегти через %{count} помилок"
+        many: "%{resource}: не вдалося зберегти через %{count} помилок"
+        other: "%{resource}: не вдалося зберегти через %{count} помилку"

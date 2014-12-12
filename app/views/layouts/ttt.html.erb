@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="nav">
+      <%= link_to_unless I18n.locale == :en, image_tag("USA.png", :border => 0, :alt => '', :title => ''), locale: "en" %>
+      <%= link_to_unless I18n.locale == :uk, image_tag("Ukraine.png", :border => 0, :alt => '', :title => ''), locale: "uk" %>
+    </div>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        <%= t('Logged in as') %> <strong><%= current_user.email %></strong>.
+        <%= link_to t('Edit profile'), edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to t('Logout'), destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <!-- link_to "Sign up", new_user_registration_path, :class => 'navbar-link' -->
+        <%= link_to t('Log in'), new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+
+    <%= yield %>
+
+    <div id="footer">
+
+      <div class="contact-info-left">
+        <div class="small-icon-messaging call">
+          <h5> <%= t("Kapranov Oleg") %></h5>
+          <h6> 38099-717-06-99 </h6>
+        </div>
+      </div>
+
+      <div class="contact-info-right">
+        <div class="small-icon-messaging email">
+          <h5> <%= t("Email Us") %> </h5>
+          <h6> <%= mail_to "lugatex@yahoo.com" %> </h6>
+        </div>
+      </div>
+
+    </div>
+
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag :cocoon %>
+  </body>
+</html>

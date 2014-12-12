@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : 'Cocoon Demo App'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Cocoon Demo App'}"
+    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
+    / Modernizr is required for Zurb Foundation
+    == javascript_include_tag 'vendor/modernizr'
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == javascript_include_tag :cocoon
+    == csrf_meta_tags
+  body
+    header
+      == render 'layouts/navigation'
+    main[role="main"]
+      == render 'layouts/messages'
+      == yield
+    #footer
+      .contact-info-left
+        .small-icon-messaging.call
+          h5 = t("Kapranov Oleg")
+          h6 38099-717-06-99
+      .contact-info-right
+        .small-icon-messaging.email
+          h5 = t("Email Us")
+          h6 = mail_to "lugatex@yahoo.com"
+
+

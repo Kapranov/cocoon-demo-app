@@ -1,0 +1,33 @@
+/.nested-fields
+  table
+    tr
+      td
+        = f.input :name, :label => false, :hint => 'name the task' do
+          = f.input_field :name, :hint => 'type the name'
+      td
+        = f.input :description, :label => false, :hint => 'describe the task' do
+          = f.input_field :description, :label => 'type the name'
+      td.done_column
+        = f.input :done, :as => :boolean
+      td
+        = link_to_remove_association '<i class="fi-trash style5"></i>'.html_safe, f, :confirm => 'do you really want to do this?'
+/.sub_tasks
+  /= f.simple_fields_for :sub_tasks, :wrapper => 'inline' do |sub_task|
+    = render 'sub_task_fields', :f => sub_task
+  /.links
+    = link_to_add_association 'add sub-task', f, :sub_tasks, :render_options => { :wrapper => 'inline' }
+.row
+  .nested-fields
+    .large-12.columns
+      = f.input :name, label: false do
+        = f.input_field :name, placeholder: t("Type the Name")
+    .large-12.columns
+      = f.input :description, label: false do
+        = f.input_field :description, placeholder: t("Describe the Task")
+    .large-7.columns.label_done
+      = f.input :done, :as => :boolean
+    .large-3.columns.label_remove
+      h5 = t("Remove")
+    .large-1.columns
+      = link_to_remove_association '<i class="fi-trash style5"></i>'.html_safe, f, :confirm => "do you really want to do this?"
+    hr

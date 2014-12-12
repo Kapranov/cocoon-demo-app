@@ -1,0 +1,16 @@
+/ navigation styled for Zurb Foundation 5
+nav.top-bar[data-topbar]
+  ul.title-area
+    li.name
+      = link_to t('Home'), root_path
+    li.toggle-topbar.menu-icon
+      a[href="#"]
+        Menu
+  .top-bar-section
+    ul
+      == render 'layouts/navigation_links'
+    ul id='nav'
+      == link_to_unless I18n.locale == :en, image_tag("USA.png", :border => 0, :alt => '', :title => ''), locale: "en"
+      '
+      == link_to_unless I18n.locale == :uk, image_tag("Ukraine.png", :border => 0, :alt => '', :title => ''), locale: "uk"
+

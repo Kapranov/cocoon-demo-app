@@ -1,0 +1,18 @@
+= simple_form_for @project do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, placeholder: t("name_text")
+  .form-inputs
+    = f.input :description, as: :text,:input_html => {:style => 'height: 150px'}, placeholder: t("description_text")
+  hr
+  = image_tag 'goodies-sketch-sheets.svg', size: "120x50", "data-svg-fallback" => image_path('logo.png')
+  h5 = t("Tasks")
+  #tasks
+    = f.simple_fields_for :tasks do |task|
+      = render 'task_fields', :f => task
+  .row
+    .large-6.columns.links
+      = link_to_add_association t("Add Task"), f, :tasks, class: "button expand btnBordered blueBtnBordered btnbutton"
+    .large-6.columns.form-actions
+      = f.button :submit, :disable_with => 'Please wait ...', class: "button expand btnBordered blueBtnBordered btnbutton"
